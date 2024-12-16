@@ -7,7 +7,7 @@ import { useEffect, useState, createContext } from "react";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
 import TelaCadastroCliente from "./componentes/telas/telaCadastroCliente";
-import TabelaCarrinho from "./componentes/telas/tabelas/tabelaCarrinho";
+import Pagina from "./componentes/layouts/Pagina";
 
 export const ContextoUsuario=createContext();
 
@@ -42,7 +42,7 @@ function App() {
             { 
             }
             <Routes>
-              <Route path="/carrinho" element={<TabelaCarrinho />} />
+              <Route path="/carrinho" element={<Pagina />} />
               <Route path="/cliente" element={<TelaCadastroCliente/>} />
             </Routes>
           </BrowserRouter>

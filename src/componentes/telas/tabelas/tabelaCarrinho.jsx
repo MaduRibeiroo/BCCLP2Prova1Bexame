@@ -6,7 +6,7 @@ import { buscarProdutos, apagarProduto } from "../../../redux/produtoReducer.js"
 import { useEffect } from "react";
 
 import ESTADO from "../../../redux/estado.js";
-export default function tabelaCarrinho(props) {
+export default function TabelaCarrinho(props) {
     const {estado, mensagem, listaDeProdutos} = useSelector(state => state.produto);
     const despachante = useDispatch(); 
 
@@ -71,7 +71,7 @@ export default function tabelaCarrinho(props) {
                                 listaDeProdutos?.map((produto) => {
                                     return (
                                         <div>
-                                            <Pagina>
+                                            
                                                 <Carrinho 
                                                     qtdCarrinho={qtdCarrinho} 
                                                     adicionarAoCarrinho={adicionarAoCarrinho}  
@@ -90,7 +90,7 @@ export default function tabelaCarrinho(props) {
                                                         </Button> 
                                                     </td>
                                                 </tr>
-                                            </Pagina>
+                                            
                                                 
                                         </div>
                                     )

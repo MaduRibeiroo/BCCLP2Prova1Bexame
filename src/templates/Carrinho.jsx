@@ -24,7 +24,7 @@ export default function Carrinho(props) {
                     border: '0px',
                 }
                 } type='button'
-                  onClick={props.adicionarAoCarrinho}>
+                  onClick={() => window.location.href = '/carrinho'}>
                     <svg xmlns="http://www.w3.org/2000/svg"
                         width="32"
                         height="32"

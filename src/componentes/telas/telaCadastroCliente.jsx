@@ -2,7 +2,7 @@ import { Alert } from "react-bootstrap";
 import Pagina from "../layouts/Pagina";
 import { useEffect, useState } from "react";
 import { consultarCliente } from "../../servicos/servicoCliente";
-import TabelaClientes from "./Tabelas/TabelaClientes";
+import TabelaClientes from "./tabelas/tabelaCliente";
 import FormCadCliente from "./formularios/formCadCliente";
 
 export default function TelaCadastroCliente(props) {
@@ -11,7 +11,6 @@ export default function TelaCadastroCliente(props) {
     const [clienteSelecionado, setClienteSelecionado] = useState({
         cpf:"",
         nome:"",
-        telefone:"",
         endereco:"",
         cidade:"",
         uf:""
