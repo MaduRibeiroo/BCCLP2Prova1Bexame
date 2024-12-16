@@ -4,9 +4,10 @@ import Cabecalho from "./templates/Cabecalho";
 import TelaLogin from "./componentes/telas/TelaLogin";
 import store from "./redux/store";
 import { useEffect, useState, createContext } from "react";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
 import TelaCadastroCliente from "./componentes/telas/telaCadastroCliente";
-import TabelaCarrinho from "./componentes/telas/tabelas/TabelaCarrinho";
+import TabelaCarrinho from "./componentes/telas/tabelas/tabelaCarrinho";
 
 export const ContextoUsuario=createContext();
 
@@ -43,8 +44,6 @@ function App() {
             <Routes>
               <Route path="/carrinho" element={<TabelaCarrinho />} />
               <Route path="/cliente" element={<TelaCadastroCliente/>} />
-              <Route path="/" element={<TelaMenu />} />
-              <Route path="*" element={<Tela404 />} />
             </Routes>
           </BrowserRouter>
         </ContextoUsuario.Provider>
