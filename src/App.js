@@ -13,13 +13,41 @@ function App() {
   },[]);
 
   const [produtos, setProdutos] = useState([]);
+  const [usuario,setUsuario]=useState({
+    "usuario":"",
+    "logado":false
+  });
+
+  if(!usuario.logado){
+    return(
+      <ContextoUsuario.Provider value={{usuario,setUsuario}}>
+        <TelaLogin/>
+      </ContextoUsuario.Provider>
+    );
+  }
+
   return (
     <div className="App">
+      <Provider store={store}>
+        <ContextoUsuario.Provider value ={{usuario,setUsuario}}>
+          <BrowserRouter>
+            { 
+            }
+            <Routes>
+              <Route path="/produto" element={<TelaCadastroProduto />} />
+              <Route path="/cliente" element={<TelaCadastroCliente/>} />
+              <Route path="/" element={<TelaMenu />} />
+              <Route path="*" element={<Tela404 />} />
+            </Routes>
+          </BrowserRouter>
+        </ContextoUsuario.Provider>
+        </Provider>
       <Cabecalho/>
       <BarraBusca/>
       <GradeProdutos listaProdutos={produtos}/>
     </div>
   );
+
 }
 
 export default App;
