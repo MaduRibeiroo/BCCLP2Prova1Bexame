@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import Carrinho from '../../../templates/Carrinho';  
+import Carrinho from '../../../templates/Carrinho.jsx';  
 import { Button, Container, Table, Spinner, Alert} from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
-import { buscarProdutos, apagarProduto } from "../../../redux/produtoReducer";
+import { buscarProdutos, apagarProduto } from "../../../redux/produtoReducer.js";
 import { useEffect } from "react";
 
 import ESTADO from "../../../redux/estado.js";
-export default function tabelaCarrinho() {
+export default function TabelaCarrinho() {
     const {estado, mensagem, listaDeProdutos} = useSelector(state => state.produto);
     const despachante = useDispatch(); 
 
@@ -96,7 +96,6 @@ export default function tabelaCarrinho() {
                             }
                         </tbody>
                     </Table>
-                    <p>Quatidade de produtos cadastrados: {listaDeProdutos.length}</p>
                 </Container>
             </>
         );

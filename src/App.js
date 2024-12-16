@@ -1,7 +1,14 @@
 import GradeProdutos from "./componentes/GradeProdutos";
 import BarraBusca from "./templates/BarraBusca";
 import Cabecalho from "./templates/Cabecalho";
-import { useEffect, useState } from "react";
+import TelaLogin from "./componentes/telas/TelaLogin";
+import store from "./redux/store";
+import { useEffect, useState, createContext } from "react";
+import { Provider } from "react-redux";
+import TelaCadastroCliente from "./componentes/telas/telaCadastroCliente";
+import TabelaCarrinho from "./componentes/telas/tabelas/TabelaCarrinho";
+
+export const ContextoUsuario=createContext();
 
 function App() {
   useEffect(() => {
@@ -34,7 +41,7 @@ function App() {
             { 
             }
             <Routes>
-              <Route path="/produto" element={<TelaCadastroProduto />} />
+              <Route path="/carrinho" element={<TabelaCarrinho />} />
               <Route path="/cliente" element={<TelaCadastroCliente/>} />
               <Route path="/" element={<TelaMenu />} />
               <Route path="*" element={<Tela404 />} />
