@@ -1,6 +1,8 @@
 import { Container, Form, Button } from "react-bootstrap";
 import { useContext, useRef } from "react";
 import { ContextoUsuario } from "../../App";
+import { buscarClientes } from "../../redux/clienteReducer";
+import FormCadCliente from "./formularios/formCadCliente";
 
 export default function TelaLogin(){
 
@@ -10,7 +12,11 @@ export default function TelaLogin(){
 
     function manipularSubmissao(evento){
         const usuarioDigitado=nomeUsuario.current.value;
-        if(usuarioDigitado==='admin' && senhaDigitada==='admin'){
+        usuario = buscarClientes();
+        if(usuarioDigitado != usuario){
+            <FormCadCliente/>
+        }
+        else{
             setUsuario({
                 "usuario":usuarioDigitado,
                 "logado":true
